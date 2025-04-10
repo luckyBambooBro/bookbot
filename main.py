@@ -1,4 +1,5 @@
 import sys
+from stats import get_num_words, character_count, sort_list
 
 if len(sys.argv) < 2:
     print("Usage: python3 main.py <path_to_book>")
@@ -6,12 +7,8 @@ if len(sys.argv) < 2:
 
 directory_path = sys.argv[1]
 
-
-#access stats.py functions
-from stats import get_num_words, character_count, sort_list
-
 def get_book_text(filepath):
-    #print no of words in book
+    #print no of words in book then store it in a total_words
     with open(filepath, "r") as f:
         file_contents = f.read()
     total_words = get_num_words(file_contents)
